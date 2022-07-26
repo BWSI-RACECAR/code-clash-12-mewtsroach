@@ -31,13 +31,12 @@ class Solution:
         # return type: list
 
         # TODO: Write code below to return a list "ary" with the solution to the prompt
-        back_ary = reversed(ary)
-        back_ary[0] = back_ary[0] + 1
-        for i in range(0, len(ary) -1):
-            if back_ary[i] > 9:
-                back_ary[i] = 0
-                back_ary[i+1] += back_ary[i] - 9
-        return reversed(back_ary)
+        ary[len(ary)-1] = ary[len(ary)-1] + 1
+        for i in range(1, len(ary)-1):
+            if ary[len(ary)-i] > 9:
+                ary[len(ary)-i] = 0
+                ary[len(ary)-i - 1] += ary[len(ary)-i] - 9
+        return ary
 
 
 def main():
