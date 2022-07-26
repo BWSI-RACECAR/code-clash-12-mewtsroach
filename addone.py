@@ -34,8 +34,9 @@ class Solution:
         ary[len(ary)-1] = ary[len(ary)-1] + 1
         for i in range(1, len(ary)-1):
             if ary[len(ary)-i] > 9:
+                ary[len(ary) - i - 1] += ary[len(ary) - i] - 9
                 ary[len(ary)-i] = 0
-                ary[len(ary)-i - 1] += ary[len(ary)-i] - 9
+
         return ary
 
 
