@@ -36,7 +36,9 @@ class Solution:
             if ary[len(ary)-i] > 9:
                 ary[len(ary) - i - 1] += ary[len(ary) - i] - 9
                 ary[len(ary)-i] = 0
-
+        if ary[len(ary)-1] > 9:
+            ary.insert(-1, 1)
+            ary[len(ary) - 1] = 0
         return ary
 
 
