@@ -32,13 +32,13 @@ class Solution:
 
         # TODO: Write code below to return a list "ary" with the solution to the prompt
         ary[len(ary)-1] = ary[len(ary)-1] + 1
-        for i in range(1, len(ary)-1):
-            if ary[len(ary)-i] > 9:
-                ary[len(ary) - i - 1] += ary[len(ary) - i] - 9
+        for i in range(1, len(ary)):
+            if ary[len(ary)-i] == 10:
+                ary[len(ary) - i - 1] += 1
                 ary[len(ary)-i] = 0
-        if ary[len(ary)-1] > 9:
-            ary.insert(-1, 1)
-            ary[len(ary) - 1] = 0
+        if ary[0] == 10:
+            ary.insert(0, 1)
+            ary[1] = 0
         return ary
 
 
